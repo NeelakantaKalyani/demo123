@@ -1,1 +1,88 @@
 welcome to neeltechjunction
+package oops_related_programs;
+
+import java.util.Scanner;
+
+abstract class Shape {
+	float area;
+
+	abstract void acceptinput();
+
+	abstract void calculatearea();
+
+	void displayarea() {
+		System.out.println("the area is below");
+		System.out.println(area);
+	}
+}
+
+class Square extends Shape {
+	float side;
+
+	void acceptinput() {
+		Scanner Scan = new Scanner(System.in);
+		System.out.println("please eneter the side ");
+		side = Scan.nextFloat();
+	}
+
+	void calculatearea() {
+		area = side * side;
+	}
+
+}
+
+class rectangle extends Shape {
+	float length;
+	float breadth;
+
+	void acceptinput() {
+		Scanner Scan = new Scanner(System.in);
+		System.out.println("please eneter the length ");
+		length = Scan.nextFloat();
+		System.out.println("please eneter the breadth ");
+		breadth = Scan.nextFloat();
+	}
+
+	void calculatearea() {
+		area = length * breadth;
+	}
+
+}
+
+class Circle extends Shape {
+	float radius;
+
+	void acceptinput() {
+		Scanner Scan = new Scanner(System.in);
+		System.out.println("please eneter the radius ");
+		radius = Scan.nextFloat();
+
+	}
+
+	void calculatearea() {
+		area = 3.14f * radius * radius;
+	}
+
+}
+
+class Randow_Practice {
+	class Geometry {
+		static void main(Shape ref) {
+			ref.acceptinput();
+			ref.calculatearea();
+			ref.displayarea();
+		}
+	}
+
+	public static void main(String[] args) {
+		Square s = new Square();
+		rectangle r = new rectangle();
+		Circle c = new Circle();
+
+		Geometry.main(s);
+		Geometry.main(r);
+		Geometry.main(c);
+
+	}
+}
+
