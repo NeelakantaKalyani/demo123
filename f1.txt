@@ -86,3 +86,4 @@ class Randow_Practice {
 	}
 }
 
+add new line for git fetch
